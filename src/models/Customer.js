@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const clientSchema = new Schema({
+const customerSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -10,9 +10,10 @@ const clientSchema = new Schema({
         type: String,
         require: true
     },
-    cnpj: {
-        type: String
+    balance: {
+        type: Number,
+        default: 0
     }
 });
 
-module.exports = mongoose.model('clients', clientSchema);
+module.exports = mongoose.model('customers', customerSchema);

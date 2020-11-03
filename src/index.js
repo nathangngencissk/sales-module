@@ -1,21 +1,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const session = require('express-session')
+const session = require('express-session');
+const cors = require('cors');
 
 const app = express();
+
+app.use(cors());
 
 app.use(bodyParser.json());
 
 app.use(session({
-    secret: '2C44-4D44-WppQ38S',
+    secret: 'wf1d1wsS',
     resave: true,
     saveUninitialized: true
 }));
 
-const shop = require('./routes/shop');
+const customer = require('./routes/customer');
 
-app.use('/api/shop', shop);
+app.use('/api/customer', customer);
 
 mongoose
     .connect('mongodb://db:27017/sales', {

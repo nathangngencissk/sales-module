@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  buy-server:
+  sales-server:
     container_name: NODEJS_SERVER_SALES
     build: "."
     volumes:

@@ -29,6 +29,10 @@ const documentSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
+    },
+    paymentType: {
+        type: String,
+        require: true
     }
 });
 

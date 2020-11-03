@@ -6,9 +6,27 @@ const productSchema = new Schema({
         type: String,
         require: true
     },
-    measuringUnit: {
-        type: String,
+    shop: {
+        type: Schema.Types.ObjectId,
+        ref: "Shop"
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: "Category"
+    },
+    price: {
+        type: Number,
         require: true
+    },
+    quantity: {
+        type: Number,
+        require: true,
+        default: 0
+    },
+    recommendation: {
+        type: Number,
+        require: true,
+        default: 0
     }
 });
 

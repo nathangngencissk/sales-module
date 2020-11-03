@@ -6,21 +6,13 @@ const orderSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Product"
     },
-    supplier: {
-        type: Schema.Types.ObjectId,
-        ref: "Supplier"
-    },
     shop: {
         type: Schema.Types.ObjectId,
         ref: "Shop"
     },
-    client: {
+    customer: {
         type: Schema.Types.ObjectId,
-        ref: "Client"
-    },
-    warehouse: {
-        type: Schema.Types.ObjectId,
-        ref: "Warehouse"
+        ref: "Customer"
     },
     date: {
         type: Date,

@@ -6,7 +6,7 @@ const campaignSchema = new Schema({
         type: String,
         require: true
     },
-    name: {
+    active: {
         type: Boolean,
         require: true,
         default: false

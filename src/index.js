@@ -17,8 +17,20 @@ app.use(session({
 }));
 
 const customer = require('./routes/customer');
+const campaing = require('./routes/campaing');
+const category = require('./routes/category');
+const document = require('./routes/document');
+const shop = require('./routes/shop');
+const order = require('./routes/order');
+const product = require('./routes/product');
 
 app.use('/api/customer', customer);
+app.use('/api/campaing', campaing);
+app.use('/api/category', category);
+app.use('/api/document', document);
+app.use('/api/shop', shop);
+app.use('/api/order', order);
+app.use('/api/product', product);
 
 mongoose
     .connect('mongodb://db:27017/sales', {

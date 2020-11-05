@@ -13,12 +13,12 @@ module.exports = () => {
 
     controller.add = (req, res) => {
         const newDocument = new Document({
-                 type: req.body.type,
-                 description: req.body.cpf,
-                 value: req.body.value,
-                 quantity: req.body.quantity,
-                 date: req.body.date,
-                 paymentType: req.body.paymentType
+            type: req.body.type,
+            description: req.body.description,
+            value: req.body.value,
+            quantity: req.body.quantity,
+            date: req.body.date,
+            paymentType: req.body.paymentType
         });
 
         newDocument
@@ -33,13 +33,13 @@ module.exports = () => {
 
     controller.edit = (req, res) => {
         const newDocument = new Document({
-                 _id: req.params.id,
-                 type: req.body.type,
-                 description: req.body.cpf,
-                 value: req.body.value,
-                 quantity: req.body.quantity,
-                 date: req.body.date,
-                 paymentType: req.body.paymentType
+            _id: req.params.id,
+            type: req.body.type,
+            description: req.body.cpf,
+            value: req.body.value,
+            quantity: req.body.quantity,
+            date: req.body.date,
+            paymentType: req.body.paymentType
         });
 
         Document.findOneAndUpdate({ _id: req.params.id }, newDocument, { new: true })
@@ -49,7 +49,7 @@ module.exports = () => {
             .catch(error => res.status(500).json(error));
     }
 
-    
+
     controller.delete = (req, res) => {
         Document.findOneAndDelete({ _id: req.params.id })
             .then(document => {

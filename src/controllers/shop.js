@@ -4,8 +4,10 @@ const Shop = require('../models/Shop')
 
 module.exports = () => {
 
+    const controller = {};
+
     controller.getAll = (req, res) => {
-            Shop.find()
+        Shop.find()
             .then(shops => {
                 res.status(200).json(shops);
             })
@@ -14,7 +16,7 @@ module.exports = () => {
 
     controller.add = (req, res) => {
         const newShop = new Shop({
-                 name: req.body.name,
+            name: req.body.name,
         });
 
         newShop
@@ -29,8 +31,8 @@ module.exports = () => {
 
     controller.edit = (req, res) => {
         const newShop = new Shop({
-                 _id: req.params.id,
-                 name: req.body.name,
+            _id: req.params.id,
+            name: req.body.name,
         });
 
         Shop.findOneAndUpdate({ _id: req.params.id }, newShop, { new: true })
@@ -40,7 +42,7 @@ module.exports = () => {
             .catch(error => res.status(500).json(error));
     }
 
-    
+
     controller.delete = (req, res) => {
         Shop.findOneAndDelete({ _id: req.params.id })
             .then(shop => {

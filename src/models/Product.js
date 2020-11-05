@@ -6,6 +6,10 @@ const productSchema = new Schema({
         type: String,
         require: true
     },
+    serial: {
+        type: String,
+        require: true
+    },
     shop: {
         type: Schema.Types.ObjectId,
         ref: "Shop"

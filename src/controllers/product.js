@@ -147,8 +147,6 @@ module.exports = () => {
 
         let updatedProduct = await Product.findOneAndUpdate({ _id: product._id }, newProduct, { new: true })
 
-        console.log('oi')
-
         res.json({
             msg: 'success',
             product: updatedProduct
